@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Stop the appserver:
+service w3d-server stop || true

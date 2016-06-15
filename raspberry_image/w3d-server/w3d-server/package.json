@@ -1,0 +1,13 @@
+{
+  "name": "w3d-server",
+  "version": "1.0.0",
+  "description": "W3D: do IoT in the browser!",
+  "bin": "index.js",
+  "scripts": {
+    "test": "mocha test/test-*.js"
+  },
+  "author": "Florian Merz <flomerz@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+  }
+}

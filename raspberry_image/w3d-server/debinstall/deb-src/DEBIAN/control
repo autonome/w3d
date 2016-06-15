@@ -1,0 +1,9 @@
+Package: w3d-server
+Version: 1.0-1
+Section: base
+Priority: optional
+Architecture: all
+Installed-Size: SIZE
+Depends:
+Maintainer: Florian Merz <flomerz@gmail.com>
+Description: W3D: do IoT in the browser!

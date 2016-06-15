@@ -1,0 +1,16 @@
+[Unit]
+Description=w3d-server
+After=network.target
+
+[Service]
+Type=simple
+# Edit WorkingDirectory, User and Group as needed
+WorkingDirectory=/opt/w3d-server
+User=root
+Group=root
+ExecStart=/usr/local/bin/node /opt/w3d-server/index.js
+SyslogIdentifier=w3d-server
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
