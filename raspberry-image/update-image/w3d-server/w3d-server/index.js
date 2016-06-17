@@ -1,19 +1,20 @@
 /* globals require */
 "use strict";
-const http = require("http");
+
 const httpPort = 8000;
 const ws = require("ws");
 const wsPort = 8009;
-
+const express = require("express");
 
 (() => {
 
   // Web server
-  console.log(`starting w3d-server on port 80`);
-  const server = http.createServer((req, res) => {
-    res.end("pong");
+  var app = new express();
+  app.disable('etag');
+  app.use('/', express.static('./www'));
+  app.listen(httpPort, '0.0.0.0', function() {
+    console.log('Web server listening on port ' + httpPort);
   });
-  server.listen(httpPort);
 
   // Web socket server
   var wss = new ws.Server({ port: wsPort });
@@ -21,11 +22,15 @@ const wsPort = 8009;
 
     conn.on('message', function(msg) {
 
+      console.log('message received');
+
       if (msg.blink) {
 
         // Make stuff blink.
 
       }
+
+      conn.send('from server');
 
     });
 
@@ -33,7 +38,6 @@ const wsPort = 8009;
 
   const shutdown = () => {
     console.log("shutting down...");
-    server.close();
     process.exit(0);
   };
 
