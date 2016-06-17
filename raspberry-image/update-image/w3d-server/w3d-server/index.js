@@ -6,7 +6,7 @@ const ws = require("ws");
 const wsPort = 8009;
 const express = require("express");
 
-(() => {
+(function() {
 
   // Web server
   var app = new express();
@@ -36,10 +36,10 @@ const express = require("express");
 
   });
 
-  const shutdown = () => {
+  function shutdown() {
     console.log("shutting down...");
     process.exit(0);
-  };
+  }
 
   process.on("SIGTERM", shutdown);
   process.on("SIGINT", shutdown);

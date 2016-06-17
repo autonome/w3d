@@ -8,7 +8,7 @@ apt-get install -y nodejs nodejs-legacy npm
 npm install -g npm
 npm install -g n
 npm install -g node-gyp
-n stable
+n lts
 
 pushd /tmp/updater
 w3d-server/install.sh
