@@ -1,6 +1,0 @@
-#!/bin/bash
-# Start the services!
-
-pushd /opt/w3d-server/
-npm install
-popd

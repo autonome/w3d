@@ -1,0 +1,16 @@
+[Unit]
+Description=usb-configurator
+After=network.target
+
+[Service]
+Type=simple
+# Edit WorkingDirectory, User and Group as needed
+WorkingDirectory=/opt/usb-configurator
+User=root
+Group=root
+ExecStart=/usr/bin/devmon --exec-on-drive "python setup.py %f %d %l"
+SyslogIdentifier=usb-configurator
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
