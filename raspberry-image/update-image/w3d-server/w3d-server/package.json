@@ -9,5 +9,6 @@
   "author": "Florian Merz <flomerz@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "ws": "1.1.0"
   }
 }
