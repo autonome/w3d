@@ -28,8 +28,7 @@
 
   <service>
     <type>_http._tcp</type>
-    <port>80</port>
+    <port>8000</port>
   </service>
 
 </service-group>
-
